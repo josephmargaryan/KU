@@ -1,0 +1,248 @@
+# Class diagram code
+@startuml
+
+
+class Doctor {
+ -Patient_Name: String
+ -Patient_Age: Integer
+ -Patient_Address: String
+ -Patient_Phone: String
+ -Patient_Email: String
+ -Medical_History: String
+ -Medication_Details: String
+ -Appointment_Date: Date
+ -Lab_Results: String
+ -Diagnostic_Images: Image
+ -Machine_Learning_Operation
+ -Patient_Consultation
+ +Add_Patient_Record():
+ +Edit_Patient_Record():
+ +Delete_Patient_Record():
+ +View_Patient_Record():
+ +View_Machine_Learning_Operation():
+ +Interact_With_Patient_Consultation():
+}
+
+
+class social_security_database {
+ -Patient_Name: String
+ -Patient_Age: Integer
+ -Patient_Phone: String
+ -Patient_Email
+ +Add_Patient_To_EHR():
+ +Remove_Patient_from_EHR():
+}
+
+
+class IoT_database {
+ -Patient_Unique_ID: Integer
+ -Patient_IoT_Device: String
+ -Patient_IoT_Data: Integer
+ +Update_Data():
+ +Remove_Data():
+ +Extract_Data():
+}
+
+
+class Appointments {
+ -Appointment_Date: Date
+ -Patient_Name: String
+ -Doctor_Name: String
+ -Appointment_Type: String
+ +Add_Appointment(): void
+ +Edit_Appointment(): void
+ +Delete_Appointment(): void
+ +View_Appointment(): void
+}
+
+
+class Medical_History {
+ -Patient_Name: String
+ -Medical_History: String
+ +Add_Medical_History(): void
+ +Edit_Medical_History(): void
+ +Delete_Medical_History(): void
+ +View_Medical_History(): void
+}
+
+
+class Machine_Learning_Operation {
+ -Operation_Details: String
+ +Machine_Learning_Operation():
+}
+
+
+class Hospital {
+ -Name: String
+ -Address: String
+ -Phone: String
+ +Add_Hospital():
+ +Edit_Hospital():
+ +Delete_Hospital():
+ +View_Hospital():
+}
+
+
+class Patient {
+ -Name: String
+ -Age: Integer
+ -Address: String
+ -Phone: String
+ +Add_Patient():
+ +Edit_Patient():
+ +Delete_Patient():
+ +View_Patient():
+}
+
+
+class Patient_Record {
+ -Patient_Name: String
+ -Medical_History: String
+ -Medication_Details: String
+ -Appointment_Date: Date
+ +Add_Record(): void
+ +Edit_Record(): void
+ +Delete_Record(): void
+ +View_Record(): void
+}
+
+
+class Department {
+ -Name: String
+ -Location: String
+ +Add_Department(): void
+ +Edit_Department(): void
+ +Delete_Department(): void
+ +View_Department(): void
+}
+
+
+class Secretary {
+ -Name: String
+ -Age: Integer
+ -Address: String
+ -Phone: String
+ -Position: String
+ +Add_Staff(): void
+ +Edit_Staff(): void
+ +Delete_Staff(): void
+ +View_Staff(): void
+}
+
+
+class Online_Consultation {
+ -Patient_Name: String
+ -Doctor_Name: String
+ -Description: String
+ -Date: Date
+ +Add_Consultation(): void
+ +Edit_Consultation(): void
+ +Delete_Consultation(): void
+ +View_Consultation(): void
+}
+
+
+
+
+class Medication {
+ -Name: String
+ -Dosage: Integer
+ -Frequency: Integer
+ +Add_Medication(): void
+ +Edit_Medication(): void
+ +Delete_Medication(): void
+ +View_Medication(): void
+}
+
+
+class Treatment {
+ -Name: String
+ -Duration: Integer
+ -Frequency: Integer
+ +Add_Treatment(): void
+ +Edit_Treatment(): void
+ +Delete_Treatment(): void
+ +View_Treatment(): void
+}
+
+
+class Condition {
+ -Name: String
+ -Description: String
+ +Add_Condition(): void
+ +Edit_Condition(): void
+ +Delete_Condition(): void
+ +View_Condition(): void
+}
+
+
+class General_Practitioner {
+ -Name: String
+ -Age: Integer
+ -Address: String
+ -Phone: String
+ -Specialty: String
+ +Add_GP(): void
+ +Edit_GP(): void
+ +Delete_GP(): void
+ +View_GP(): void
+}
+
+
+class Lab_Results {
+ -Patient_Name: String
+ -Lab_Results: String
+ +Add_Lab_Result(): void
+ +Edit_Lab_Result(): void
+ +Delete_Lab_Result(): void
+ +View_Lab_Result(): void
+}
+
+
+class Diagnostic_Images {
+ -Patient_Name: String
+ -Diagnostic_Images: Image
+ +Add_Diagnostic_Image(): void
+ +Edit_Diagnostic_Image(): void
+ +Delete_Diagnostic_Image(): void
+ +View_Diagnostic_Image(): void
+}
+
+
+
+
+Doctor <--> Hospital
+Doctor --> social_security_database
+Doctor --> Appointments
+Doctor --> Appointments
+Doctor <--> Secretary
+Doctor <--> Patient
+Patient <--> General_Practitioner
+Machine_Learning_Operation --* IoT_database
+
+
+Patient *--* social_security_database
+Patient --> Patient_Record
+Department --* Doctor
+
+
+
+
+
+
+Doctor --* Online_Consultation
+Patient --* Online_Consultation
+Patient --> Medication
+Doctor --> Medication
+Patient --> Treatment
+Doctor --> Treatment
+Patient --> Condition
+Doctor --> Treatment
+Patient --> Lab_Results
+Doctor --> Lab_Results
+Patient --> Diagnostic_Images
+Doctor --> Diagnostic_Images
+Patient--> Medical_History
+Doctor --> Medical_History
+General_Practitioner o--o Doctor
+@enduml
