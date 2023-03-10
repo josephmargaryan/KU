@@ -246,3 +246,263 @@ Patient--> Medical_History
 Doctor --> Medical_History
 General_Practitioner o--o Doctor
 @enduml
+
+
+# User interface 1
+import sys
+from PyQt6.QtWidgets import *
+
+
+app = QApplication(sys.argv)
+
+
+window = QWidget()
+window.setWindowTitle('EHR Home Page')
+
+
+# Create vertical layout to hold the two login buttons
+layout = QVBoxLayout()
+
+
+# Create the two login buttons
+login_professional_btn = QPushButton('Log in as a Health Professional')
+login_citizen_btn = QPushButton('Log in as a Citizen')
+
+
+# Add both buttons to the layout
+layout.addWidget(login_professional_btn)
+layout.addWidget(login_citizen_btn)
+
+
+# Set the layout of the window
+window.setLayout(layout)
+
+
+# Show the window
+window.show()
+
+
+sys.exit(app.exec())
+
+
+# User interface 2
+import sys
+from PyQt6.QtWidgets import *
+
+
+app = QApplication(sys.argv)
+
+
+window = QWidget()
+window.setWindowTitle('EHR Citizen Home Page')
+
+
+# Create vertical layout to hold the widgets
+layout = QVBoxLayout()
+
+
+# Create the widgets
+medical_history_lbl = QLabel('Medical History')
+medical_history_txt = QLineEdit()
+medication_details_lbl = QLabel('Medication Details')
+medication_details_txt = QLineEdit()
+appointment_date_lbl = QLabel('Appointment Date')
+appointment_date_dp = QDateEdit()
+lab_results_lbl = QLabel('Lab Results')
+lab_results_txt = QLineEdit()
+diagnostic_images_lbl = QLabel('Diagnostic Images')
+diagnostic_images_img = QLabel()
+edit_personal_data_btn = QPushButton('Edit Personal Data')
+
+
+# Add the widgets to the layout
+layout.addWidget(medical_history_lbl)
+layout.addWidget(medical_history_txt)
+layout.addWidget(medication_details_lbl)
+layout.addWidget(medication_details_txt)
+layout.addWidget(appointment_date_lbl)
+layout.addWidget(appointment_date_dp)
+layout.addWidget(lab_results_lbl)
+layout.addWidget(lab_results_txt)
+layout.addWidget(diagnostic_images_lbl)
+layout.addWidget(diagnostic_images_img)
+layout.addWidget(edit_personal_data_btn)
+
+
+# Set the layout of the window
+window.setLayout(layout)
+
+
+# Show the window
+window.show()
+
+
+sys.exit(app.exec())
+
+
+# User interface 3
+
+import sys
+from PyQt6.QtWidgets import *
+
+
+app = QApplication(sys.argv)
+
+
+window = QWidget()
+window.setWindowTitle('EHR Professional Home Page')
+
+
+# Create vertical layout to hold the widgets
+layout = QVBoxLayout()
+
+
+# Create the widgets
+patient_catalog_btn = QPushButton('Patient Catalog')
+work_schedule_btn = QPushButton('Work Schedule')
+urgent_appointments_btn = QPushButton('Urgent Appointments')
+meetings_btn = QPushButton('Meetings')
+messages_btn = QPushButton('Messages')
+
+
+# Add the widgets to the layout
+layout.addWidget(patient_catalog_btn)
+layout.addWidget(work_schedule_btn)
+layout.addWidget(urgent_appointments_btn)
+layout.addWidget(meetings_btn)
+layout.addWidget(messages_btn)
+
+
+# Set the layout of the window
+window.setLayout(layout)
+
+
+# Show the window
+window.show()
+
+
+sys.exit(app.exec())
+
+
+# User interface 4
+
+import sys
+from PyQt6.QtWidgets import *
+
+
+app = QApplication(sys.argv)
+
+
+window = QWidget()
+window.setWindowTitle('EHR Patient Catalog')
+
+
+# Create vertical layout to hold the widgets
+layout = QVBoxLayout()
+
+
+# Create the widgets
+existing_patients_btn = QPushButton('Existing Patients')
+register_new_patient_btn = QPushButton('Register New Patient')
+social_security_lbl = QLabel('Social Security Number')
+social_security_txt = QLineEdit()
+
+
+# Add the widgets to the layout
+layout.addWidget(existing_patients_btn)
+layout.addWidget(register_new_patient_btn)
+layout.addWidget(social_security_lbl)
+layout.addWidget(social_security_txt)
+
+
+# Set the layout of the window
+window.setLayout(layout)
+
+
+# Show the window
+window.show()
+
+
+sys.exit(app.exec())
+
+
+
+# User interface 5
+
+import sys
+from PyQt6.QtWidgets import *
+
+
+app = QApplication(sys.argv)
+
+
+window = QWidget()
+window.setWindowTitle('EHR Add Patient Record')
+
+
+# Create vertical layout to hold the widgets
+layout = QVBoxLayout()
+
+
+# Create the widgets
+patient_name_lbl = QLabel('Patient Name')
+patient_name_txt = QLineEdit()
+patient_age_lbl = QLabel('Patient Age')
+patient_age_txt = QLineEdit()
+patient_address_lbl = QLabel('Patient Address')
+patient_address_txt = QLineEdit()
+patient_phone_lbl = QLabel('Patient Phone')
+patient_phone_txt = QLineEdit()
+patient_email_lbl = QLabel('Patient Email')
+patient_email_txt = QLineEdit()
+medical_history_lbl = QLabel('Medical History')
+medical_history_txt = QLineEdit()
+medication_details_lbl = QLabel('Medication Details')
+medication_details_txt = QLineEdit()
+appointment_date_lbl = QLabel('Appointment Date')
+appointment_date_dp = QDateEdit()
+lab_results_lbl = QLabel('Lab Results')
+lab_results_txt = QLineEdit()
+diagnostic_images_lbl = QLabel('Diagnostic Images')
+diagnostic_images_img = QLabel()
+edit_patient_record_btn = QPushButton('Edit Patient Record')
+delete_patient_record_btn = QPushButton('Delete Patient Record')
+view_patient_record_btn = QPushButton('View Patient Record')
+
+
+# Add the widgets to the layout
+layout.addWidget(patient_name_lbl)
+layout.addWidget(patient_name_txt)
+layout.addWidget(patient_age_lbl)
+layout.addWidget(patient_age_txt)
+layout.addWidget(patient_address_lbl)
+layout.addWidget(patient_address_txt)
+layout.addWidget(patient_phone_lbl)
+layout.addWidget(patient_phone_txt)
+layout.addWidget(patient_email_lbl)
+layout.addWidget(patient_email_txt)
+layout.addWidget(medical_history_lbl)
+layout.addWidget(medical_history_txt)
+layout.addWidget(medication_details_lbl)
+layout.addWidget(medication_details_txt)
+layout.addWidget(appointment_date_lbl)
+layout.addWidget(appointment_date_dp)
+layout.addWidget(lab_results_lbl)
+layout.addWidget(lab_results_txt)
+layout.addWidget(diagnostic_images_lbl)
+layout.addWidget(diagnostic_images_img)
+layout.addWidget(edit_patient_record_btn)
+layout.addWidget(delete_patient_record_btn)
+layout.addWidget(view_patient_record_btn)
+
+
+# Set the layout of the window
+window.setLayout(layout)
+
+
+# Show the window
+window.show()
+
+
+sys.exit(app.exec())
+
